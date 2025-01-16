@@ -1,0 +1,10 @@
+.news-content {
+  display: flex;
+  column-gap: 2rem;
+  height: calc(100% - 16rem);
+  padding: 0 2rem;
+  /* background-color: green; */
+}
+.weather-calendar {
+  flex: 1;
+}
