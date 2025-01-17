@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import NewsSection from "./NewsSection";
 import Blogs from "./Blogs";
 import Footer from "./Footer";
-
+import NewsProvider from "../context/NewsProvider";
 // function News() {
 //   return (
 //     <div className="news">
@@ -137,15 +137,17 @@ import Footer from "./Footer";
 
 function News() {
   return (
-    <div className="news">
-      <Header />
-      <NewsContent>
-        <NavBar />
-        <NewsSection />
-        <Blogs />
-      </NewsContent>
-      <Footer />
-    </div>
+    <NewsProvider>
+      <div className="news">
+        <Header />
+        <NewsContent>
+          <NavBar />
+          <NewsSection />
+          <Blogs />
+        </NewsContent>
+        <Footer />
+      </div>
+    </NewsProvider>
   );
 }
 export default News;
