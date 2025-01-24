@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import userImage from "../assets/images/user.jpg";
 import "../ui/css/NavBar.css";
+import { NewsContext } from "../context/NewsProvider";
+import BookMarks from "./BookMarks";
+const categories = [
+  "general",
+  "world",
+  "business",
+  "technology",
+  "entertainment",
+  "sports",
+  "science",
+  "health",
+  "nation",
+];
 
 function NavBar() {
+  const { setCategory } = useContext(NewsContext);
+  const [isBookMarksOpen, setIsBookMarksOpen] = useState(false);
   return (
     <div className="navbar">
       <div className="user">
@@ -12,38 +27,21 @@ function NavBar() {
       <div className="categories">
         <h1 className="nav-heading">Categories</h1>
         <div className="nav-links">
-          <a href="" className="nav-link">
-            General
-          </a>
-          <a href="" className="nav-link">
-            World
-          </a>
-          <a href="" className="nav-link">
-            Business
-          </a>
-          <a href="" className="nav-link">
-            Technology
-          </a>
-          <a href="" className="nav-link">
-            Entertainment
-          </a>
-          <a href="" className="nav-link">
-            Sports
-          </a>
-          <a href="" className="nav-link">
-            Science
-          </a>
-          <a href="" className="nav-link">
-            Health
-          </a>
-          <a href="" className="nav-link">
-            Nation
-          </a>
-          <a href="" className="nav-link">
+          {categories.map((category, index) => (
+            <p
+              className="nav-link"
+              key={index}
+              onClick={() => setCategory(category)}
+            >
+              {category}
+            </p>
+          ))}
+          <p className="nav-link" onClick={() => setIsBookMarksOpen(true)}>
             Bookmarks <i className="fa-regular fa-bookmark"></i>
-          </a>
+          </p>
         </div>
       </div>
+      {isBookMarksOpen && <BookMarks closeBookMark={setIsBookMarksOpen} />}
     </div>
   );
 }

@@ -1,57 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../ui/css/NewsGrid.css";
 
-import techImg from "../assets/images/tech.jpg";
-import sportsImg from "../assets/images/sports.jpg";
-import scienceImg from "../assets/images/science.jpg";
-import worldImg from "../assets/images/world.jpg";
-import healthImg from "../assets/images/health.jpg";
-import nationImg from "../assets/images/nation.jpg";
+import noImage from "../assets/images/no-img.png";
+import { NewsContext } from "../context/NewsProvider";
+
 function NewsGrid() {
-  return (
+  const { news, isLoading } = useContext(NewsContext);
+  return isLoading ? (
+    <h1>Loading...</h1>
+  ) : (
     <div className="news-grid">
-      <div className="news-grid-item">
-        <img src={techImg} alt="News Image" />
-        <h3>
-          Lorem ipsum dolor sit amet.{" "}
-          <i className="fa-regular fa-bookmark bookmark"></i>
-        </h3>
-      </div>
-      <div className="news-grid-item">
-        <img src={sportsImg} alt="News Image" />
-        <h3>
-          Lorem ipsum dolor sit amet.{" "}
-          <i className="fa-regular fa-bookmark bookmark"></i>
-        </h3>
-      </div>
-      <div className="news-grid-item">
-        <img src={scienceImg} alt="News Image" />
-        <h3>
-          ko Lorem ipsum dolor sit amet.{" "}
-          <i className="fa-regular fa-bookmark bookmark"></i>
-        </h3>
-      </div>
-      <div className="news-grid-item">
-        <img src={worldImg} alt="News Image" />
-        <h3>
-          Lorem ipsum dolor sit amet.{" "}
-          <i className="fa-regular fa-bookmark bookmark"></i>
-        </h3>
-      </div>
-      <div className="news-grid-item">
-        <img src={healthImg} alt="News Image" />
-        <h3>
-          Lorem ipsum dolor sit amet.{" "}
-          <i className="fa-regular fa-bookmark bookmark"></i>
-        </h3>
-      </div>
-      <div className="news-grid-item">
-        <img src={nationImg} alt="News Image" />
-        <h3>
-          Lorem ipsum dolor sit amet.{" "}
-          <i className="fa-regular fa-bookmark bookmark"></i>
-        </h3>
-      </div>
+      {news &&
+        news.length > 0 &&
+        news.map((article, index) => {
+          return (
+            <div className="news-grid-item" key={index}>
+              {article.image ? (
+                <img src={article.image} alt="News Image" />
+              ) : (
+                <img src={noImage} alt="News Image"></img>
+              )}
+              <h3>
+                {article.title.slice(0, 50)}
+                <i className="fa-regular fa-bookmark bookmark"></i>
+              </h3>
+            </div>
+          );
+        })}
     </div>
   );
 }
