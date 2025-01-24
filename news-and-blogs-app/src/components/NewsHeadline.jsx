@@ -6,18 +6,27 @@ import { NewsContext } from "../context/NewsProvider";
 
 function NewsHeadline() {
   const { headline, isLoading } = useContext(NewsContext);
-  return isLoading ? (
-    <p>Loading..</p>
-  ) : (
-    headline && (
-      <div className="headline">
-        <img src={headline.image} alt="Headline-Image" />
-        <div className="headline-title">
-          {headline.title}
-          <i className="fa-regular fa-bookmark bookmark"></i>
-        </div>
+  // return isLoading ? (
+  //   <p>Loading..</p>
+  // ) : (
+  //   headline && (
+  //     <div className="headline">
+  //       <img src={headline.image} alt="Headline-Image" />
+  //       <div className="headline-title">
+  //         {headline.title}
+  //         <i className="fa-regular fa-bookmark bookmark"></i>
+  //       </div>
+  //     </div>
+  //   )
+  // );
+  return (
+    <div className="headline">
+      <img src={techImg} alt="Headline-Image" />
+      <div className="headline-title">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        <i className="fa-regular fa-bookmark bookmark"></i>
       </div>
-    )
+    </div>
   );
 }
 

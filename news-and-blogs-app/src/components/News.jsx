@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import NewsSection from "./NewsSection";
 import Blogs from "./Blogs";
 import Footer from "./Footer";
-import NewsProvider from "../context/NewsProvider";
+
 // function News() {
 //   return (
 //     <div className="news">
@@ -137,17 +137,18 @@ import NewsProvider from "../context/NewsProvider";
 
 function News() {
   return (
-    <NewsProvider>
+    <div className="news-blogs-app">
       <div className="news">
         <Header />
         <NewsContent>
           <NavBar />
           <NewsSection />
-          <Blogs />
+          {/* <Blogs /> */}
+          <div className="my-blogs">My Blogs</div>;
         </NewsContent>
         <Footer />
       </div>
-    </NewsProvider>
+    </div>
   );
 }
 export default News;
