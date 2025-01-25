@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "../ui/css/NewsHeadline.css";
-
+import Shimmer from "./Shimmer";
 import techImg from "../assets/images/tech.jpg";
 import { NewsContext } from "../context/NewsProvider";
 
@@ -21,9 +21,9 @@ function NewsHeadline() {
   // );
   return (
     <div className="headline">
-      <img src={techImg} alt="Headline-Image" />
+      <img src={headline.image} alt="Headline-Image" />
       <div className="headline-title">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        {headline.title}
         <i className="fa-regular fa-bookmark bookmark"></i>
       </div>
     </div>

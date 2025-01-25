@@ -18,7 +18,6 @@ function BlogForm({ currentBlog, currentBlogIndex: index, closeModal }) {
       };
       const updatedBlogs = [...blogs];
       updatedBlogs.splice(index, 1, newBlog);
-      console.log("Updated Blogs:", updatedBlogs);
       localStorage.setItem("blogs", JSON.stringify(updatedBlogs));
       setBlogs(updatedBlogs);
       setTitle("");

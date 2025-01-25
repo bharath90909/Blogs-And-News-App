@@ -3,12 +3,11 @@ import "../ui/css/NewsGrid.css";
 
 import noImage from "../assets/images/no-img.png";
 import { NewsContext } from "../context/NewsProvider";
+import Shimmer from "./Shimmer";
 
 function NewsGrid() {
   const { news, isLoading } = useContext(NewsContext);
-  return isLoading ? (
-    <h1>Loading...</h1>
-  ) : (
+  return (
     <div className="news-grid">
       {news &&
         news.length > 0 &&
