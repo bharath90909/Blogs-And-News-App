@@ -1,45 +1,26 @@
-.blogs {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: relative;
-}
-.blogs-left {
-  width: 50%;
-  height: 100%;
-  /* background: linear-gradient(
-      rgba(184, 142, 252, 0.3),
-      rgba(104, 119, 244, 0.2)
-    ),
-    url("../assets/images/bg.jpg") center no-repeat; */
-  background-image: url("../assets/images/bg.jpg");
-  background: linear-gradient(rgba(184, 142, 252, 3), rgba(104, 119, 244, 2));
-  background-size: cover;
-  border-radius: 1rem 0 0 1rem;
-}
-
-.blogs-left img {
-  width: 15rem;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 0.1rem solid #6877f4;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.blogs-right {
-  position: relative;
-  width: 50%;
-  height: 100%;
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
-.post-btn {
+.modal-blog-form {
+  position: relative;
+  /* top: 20px; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+/* .modal-blog-form-content {
+  border: 1px solid yellow;
+} */
+.modal-blog-form .post-btn {
   width: clamp(15rem, 16cqi, 30rem);
   aspect-ratio: 4/1;
   background: linear-gradient(to right, #b88efc, #6877f4);
@@ -53,34 +34,37 @@
   cursor: pointer;
 }
 
-.post-btn:active {
+.modal-blog-form .post-btn:active {
   transform: translateY(-5%);
 }
-.blogs-right-form {
+.modal-blog-form .blogs-right-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 5rem;
 }
-.blogs-right-form form {
+.modal-blog-form form {
+  /* border: 1px solid blue; */
   display: flex;
   flex-direction: column;
   row-gap: 4rem;
 }
 
-.blogs-right-form h1 {
+.modal-blog-form h1 {
+  text-align: center;
   font-family: "Comfortaa", sans-serif;
-  font-size: clamp(2rem, 5cqi, 6rem);
+  font-size: clamp(2rem, 3cqi, 6rem);
   text-transform: uppercase;
   background: linear-gradient(to right, #b88efc, #6877f4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
-.blogs-right-form input[type="file"] {
+.modal-blog-form input[type="file"] {
   display: none;
 }
-.text-input,
-.title-input {
+.modal-blog-form .text-input,
+.modal-blog-form .title-input {
   width: clamp(15rem, 25cqi, 45rem);
   background: transparent;
   border: none;
@@ -88,29 +72,29 @@
   padding: 2rem 0;
   color: #ddd;
 }
-.title-input {
+.modal-blog-form .title-input {
   font-size: 1.8rem;
 }
-.title-input::placeholder,
-.text-input::placeholder {
+.modal-blog-form .title-input::placeholder,
+.modal-blog-form .text-input::placeholder {
   font-family: "Comfortaa", sans-serif;
   color: #b88efc;
   font-size: 1.3rem;
   opacity: 0.5;
 }
-.title-input::placeholder {
+.modal-blog-form .title-input::placeholder {
   font-size: 1.6rem;
 }
 
-.title-input:focus::placeholder,
-.text-input:focus::placeholder {
+.modal-blog-form .title-input:focus::placeholder,
+.modal-blog-form .text-input:focus::placeholder {
   color: transparent;
 }
-.text-input {
+.modal-blog-form .text-input {
   aspect-ratio: 5/3;
   resize: none;
 }
-.file-upload {
+.modal-blog-form .file-upload {
   display: flex;
   align-items: center;
   column-gap: 2rem;
@@ -118,12 +102,12 @@
   color: #bbb;
   cursor: pointer;
 }
-.file-upload i {
+.modal-blog-form .file-upload i {
   font-size: 4rem;
   color: #b88efc;
 }
 
-.close-btn {
+.modal-blog-form .close-btn {
   position: absolute;
   top: 3rem;
   right: 2.5rem;
@@ -136,11 +120,11 @@
   align-items: center;
   cursor: pointer;
 }
-.close-btn i {
+.modal-blog-form .close-btn i {
   font-size: 4rem;
 }
 
-.submit-btn {
+.modal-blog-form .submit-btn {
   height: 5rem;
   background: linear-gradient(to left, #b88efc, #6877f4);
   border: none;
@@ -152,6 +136,6 @@
   cursor: pointer;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-.submit-btn:active {
+.modal-blog-form .submit-btn:active {
   transform: translateY(-5%);
 }

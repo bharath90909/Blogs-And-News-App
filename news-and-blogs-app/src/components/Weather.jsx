@@ -20,7 +20,10 @@ function Weather() {
     setLocation("");
   };
 
-  useEffect(() => fetchWeather(), []);
+  useEffect(() => {
+    fetchWeather();
+    return () => {};
+  }, []);
 
   return (
     <div className="weather">

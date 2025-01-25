@@ -3,6 +3,7 @@ import userImage from "../assets/images/user.jpg";
 import "../ui/css/NavBar.css";
 import { NewsContext } from "../context/NewsProvider";
 import BookMarks from "./BookMarks";
+import { Link } from "react-router-dom";
 const categories = [
   "general",
   "world",
@@ -20,10 +21,12 @@ function NavBar() {
   const [isBookMarksOpen, setIsBookMarksOpen] = useState(false);
   return (
     <div className="navbar">
-      <div className="user">
-        <img src={userImage} alt="user image" />
-        <p>Mary's Blog</p>
-      </div>
+      <Link to="/blogs" className="user">
+        <div className="user">
+          <img src={userImage} alt="user image" />
+          <p>Mary's Blog</p>
+        </div>
+      </Link>
       <div className="categories">
         <h1 className="nav-heading">Categories</h1>
         <div className="nav-links">

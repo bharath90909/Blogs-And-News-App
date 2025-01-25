@@ -1,0 +1,21 @@
+.blog-modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 30rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  opacity: 0.5;
+}
+.blog-modal-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  margin-top: 2rem;
+}
+.blog-modal-content-text {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  line-height: 2.7rem;
+  color: #bbb;
+}

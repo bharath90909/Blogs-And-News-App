@@ -1,9 +1,9 @@
-import { useState } from "react";
 import News from "./components/News";
 import Blogs from "./components/Blogs";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NewsProvider from "./context/NewsProvider";
 import AppLayout from "./components/AppLayout";
+import BlogsProvider from "./context/BlogsProvider";
 function App() {
   const appRouter = createBrowserRouter([
     {
@@ -22,9 +22,11 @@ function App() {
     },
   ]);
   return (
-    <NewsProvider>
-      <RouterProvider router={appRouter} />
-    </NewsProvider>
+    <BlogsProvider>
+      <NewsProvider>
+        <RouterProvider router={appRouter} />
+      </NewsProvider>
+    </BlogsProvider>
   );
   // return (
   //   <>

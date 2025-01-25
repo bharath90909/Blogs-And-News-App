@@ -4,7 +4,7 @@ import Header from "./Header";
 import NewsContent from "./NewsContent";
 import NavBar from "./NavBar";
 import NewsSection from "./NewsSection";
-import Blogs from "./Blogs";
+import MyBlogs from "./MyBlogs";
 import Footer from "./Footer";
 
 // function News() {
@@ -143,8 +143,7 @@ function News() {
         <NewsContent>
           <NavBar />
           <NewsSection />
-          {/* <Blogs /> */}
-          <div className="my-blogs">My Blogs</div>;
+          <MyBlogs />
         </NewsContent>
         <Footer />
       </div>

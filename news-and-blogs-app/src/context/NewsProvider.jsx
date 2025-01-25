@@ -9,24 +9,29 @@ function NewsProvider({ children }) {
   const [category, setCategory] = useState("general");
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  async function fetchNews() {
-    setIsLoading(true);
-    // let url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${apiKey}`;
+  // async function fetchNews() {
+  //   setIsLoading(true);
+  //   let url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${apiKey}`;
 
-    // if (searchQuery) {
-    //   url = `https://gnews.io/api/v4/search?q=${searchQuery}&apikey=${apiKey}`;
-    // }
+  //   if (searchQuery) {
+  //     url = `https://gnews.io/api/v4/search?q=${searchQuery}&apikey=${apiKey}`;
+  //   }
 
-    // const response = await axios.get(url);
-    // const fetchedNews = response.data.articles;
-    // setHeadline(fetchedNews[0]);
-    // setNews(fetchedNews.slice(1, 7));
-    // setIsLoading(false);
-  }
-  useEffect(() => {
-    fetchNews();
-    console.log("Inside Effect");
-  }, [category, searchQuery]);
+  //   const response = await axios.get(url);
+  //   const fetchedNews = response.data.articles;
+  //   console.log(fetchNews);
+  //   setHeadline(fetchedNews[0]);
+  //   setNews(fetchedNews.slice(1, 7));
+  //   setIsLoading(false);
+  // }
+  // useEffect(() => {
+  //   fetchNews();
+  //   console.log("Inside Effect 1");
+  // }, [category, searchQuery]);
+  // useEffect(() => {
+  //   setSearchQuery("");
+  //   console.log("Inside Effect 2");
+  // }, [category]);
   return (
     <NewsContext.Provider
       value={{
