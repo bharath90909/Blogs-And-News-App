@@ -10,15 +10,29 @@ import Shimmer from "./Shimmer";
 
 function NewsSection() {
   const { isLoading } = useContext(NewsContext);
+  const [isNewsModalOpen, setIsNewsModalOpen] = useState(false);
+  const [currentNews, setCurrentNews] = useState(null);
   return (
     <div className="news-section">
       {isLoading ? (
         <Shimmer />
       ) : (
         <>
-          <NewsHeadline />
-          <NewsGrid />
+          <NewsHeadline
+            setCurrentNews={setCurrentNews}
+            modalOpen={() => setIsNewsModalOpen(true)}
+          />
+          <NewsGrid
+            setCurrentNews={setCurrentNews}
+            modalOpen={() => setIsNewsModalOpen(true)}
+          />
         </>
+      )}
+      {isNewsModalOpen && (
+        <NewsModal
+          data={currentNews}
+          closeModal={() => setIsNewsModalOpen(false)}
+        />
       )}
     </div>
   );

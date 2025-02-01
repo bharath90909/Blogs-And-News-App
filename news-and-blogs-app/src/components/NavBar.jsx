@@ -17,7 +17,7 @@ const categories = [
 ];
 
 function NavBar() {
-  const { setCategory } = useContext(NewsContext);
+  const { category, setCategory } = useContext(NewsContext);
   const [isBookMarksOpen, setIsBookMarksOpen] = useState(false);
   return (
     <div className="navbar">
@@ -32,7 +32,7 @@ function NavBar() {
         <div className="nav-links">
           {categories.map((category, index) => (
             <p
-              className="nav-link"
+              className={`nav-link `}
               key={index}
               onClick={() => setCategory(category)}
             >

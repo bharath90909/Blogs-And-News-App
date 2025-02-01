@@ -9,6 +9,9 @@ function NewsProvider({ children }) {
   const [category, setCategory] = useState("general");
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [bookmarks, setBookmarks] = useState(
+    JSON.parse(localStorage.getItem("bookmarks")) || []
+  );
   async function fetchNews() {
     setIsLoading(true);
     let url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${apiKey}`;
@@ -41,6 +44,9 @@ function NewsProvider({ children }) {
         searchQuery,
         setSearchQuery,
         setCategory,
+        category,
+        bookmarks,
+        setBookmarks,
       }}
     >
       {children}
