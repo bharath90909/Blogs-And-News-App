@@ -22,6 +22,10 @@
   flex-wrap: wrap;
   gap: 1.2rem;
   justify-content: space-between;
+  overflow-y: scroll;
+}
+.blog-posts::-webkit-scrollbar {
+  display: none;
 }
 .blog-post {
   position: relative;
@@ -72,4 +76,19 @@
   object-fit: cover;
   border-radius: 1rem;
   opacity: 0.5;
+}
+
+@media (max-width: 1400px) {
+  .blog-post {
+    flex: 0 1 calc(100% - 0.6rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .my-blogs {
+    width: 100%;
+  }
+  .blog-post {
+    flex: 0 1 calc(50% - 0.6rem);
+  }
 }

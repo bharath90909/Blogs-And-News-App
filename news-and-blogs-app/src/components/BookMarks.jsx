@@ -42,27 +42,6 @@ function BookMarks({ closeBookMark }) {
                 </div>
               );
             })}
-
-          {/* <div className="bookmark-item">
-            <img src={demoImage} alt="" />
-            <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              animi.
-            </h3>
-            <span className="delete-button">
-              <i className="fa-regular fa-circle-xmark"></i>
-            </span>
-          </div>
-          <div className="bookmark-item">
-            <img src={demoImage} alt="" />
-            <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              animi.
-            </h3>
-            <span className="delete-button">
-              <i className="fa-regular fa-circle-xmark"></i>
-            </span>
-          </div> */}
         </div>
       </div>
     </div>

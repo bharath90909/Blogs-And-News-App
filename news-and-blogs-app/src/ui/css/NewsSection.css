@@ -3,3 +3,13 @@
   border-radius: 1rem;
   height: 100%;
 }
+@media (max-width: 1400px) {
+  .news-section {
+    overflow: hidden;
+  }
+}
+@media (max-width: 900px) {
+  .news-section {
+    width: 100%;
+  }
+}

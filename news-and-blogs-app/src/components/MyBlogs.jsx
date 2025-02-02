@@ -71,54 +71,6 @@ function MyBlogs() {
         </p>
       )}
 
-      {/* <div className="blog-post">
-          <img src={blogImage1} alt="" />
-          <h3>Lorem ipsum dolor sit.</h3>
-          <div className="post-buttons">
-            <button className="edit-post">
-              <i className="bx bxs-edit"></i>
-            </button>
-            <button className="delete-post">
-              <i className="bx bxs-x-circle"></i>
-            </button>
-          </div>
-        </div>
-        <div className="blog-post">
-          <img src={blogImage2} alt="" />
-          <h3>Lorem ipsum dolor sit.</h3>
-          <div className="post-buttons">
-            <button className="edit-post">
-              <i className="bx bxs-edit"></i>
-            </button>
-            <button className="delete-post">
-              <i className="bx bxs-x-circle"></i>
-            </button>
-          </div>
-        </div>
-        <div className="blog-post">
-          <img src={blogImage3} alt="" />
-          <h3>Lorem ipsum dolor sit..</h3>
-          <div className="post-buttons">
-            <button className="edit-post">
-              <i className="bx bxs-edit"></i>
-            </button>
-            <button className="delete-post">
-              <i className="bx bxs-x-circle"></i>
-            </button>
-          </div>
-        </div>
-        <div className="blog-post">
-          <img src={blogImage4} alt="" />
-          <h3>Lorem ipsum dolor sit.</h3>
-          <div className="post-buttons">
-            <button className="edit-post">
-              <i className="bx bxs-edit"></i>
-            </button>
-            <button className="delete-post">
-              <i className="bx bxs-x-circle"></i>
-            </button>
-          </div>
-        </div> */}
       {isBlogModalOpen && (
         <BlogModal currentBlog={currentBlog} closeModal={closeBlogModal} />
       )}

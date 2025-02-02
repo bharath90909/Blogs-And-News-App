@@ -8,19 +8,7 @@ import noImage from "../assets/images/no-img.png";
 
 function NewsHeadline({ modalOpen, setCurrentNews }) {
   const { headline, bookmarks, setBookmarks } = useContext(NewsContext);
-  // return isLoading ? (
-  //   <p>Loading..</p>
-  // ) : (
-  //   headline && (
-  //     <div className="headline">
-  //       <img src={headline.image} alt="Headline-Image" />
-  //       <div className="headline-title">
-  //         {headline.title}
-  //         <i className="fa-regular fa-bookmark bookmark"></i>
-  //       </div>
-  //     </div>
-  //   )
-  // );
+
   const showHeadLine = () => {
     setCurrentNews(headline);
     modalOpen();

@@ -45,7 +45,7 @@
   background: linear-gradient(to right, #b88efc, #6877f4);
   border: none;
   border-radius: 5rem;
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 1.5cqi, 2.5rem);
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
@@ -70,7 +70,7 @@
 
 .blogs-right-form h1 {
   font-family: "Comfortaa", sans-serif;
-  font-size: clamp(2rem, 5cqi, 6rem);
+  font-size: clamp(4rem, 5cqi, 6rem);
   text-transform: uppercase;
   background: linear-gradient(to right, #b88efc, #6877f4);
   -webkit-background-clip: text;
@@ -157,4 +157,51 @@
 }
 .submit-btn:active {
   transform: translateY(-5%);
+}
+
+@media (max-width: 900px) {
+  .blogs-left {
+    background: none;
+    width: 100%;
+  }
+
+  .blogs-left img {
+    width: 10rem;
+    top: 10%;
+    right: auto;
+    left: 50%;
+    transform: translateX((-50%));
+  }
+
+  .blogs-right {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+
+  .close-btn {
+    top: 3rem;
+    right: 1.5rem;
+  }
+  .blogs-right-form {
+    margin-top: 7rem;
+  }
+
+  .title-input,
+  .text-input {
+    width: 40rem;
+  }
+  .text-input {
+    aspect-ratio: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .text-input,
+  .title-input {
+    width: 90%;
+  }
+  .blogs-right-form {
+    margin-top: 4rem;
+  }
 }

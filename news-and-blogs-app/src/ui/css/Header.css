@@ -45,3 +45,31 @@
   color: #bbb;
   font-size: 1.8rem;
 }
+@media (max-width: 700px) {
+  .news-header {
+    padding: 0 2rem;
+  }
+  .logo {
+    font-size: 4rem;
+  }
+  .search-bar input {
+    width: 18rem;
+  }
+
+  .search-bar input:focus {
+    width: 23rem;
+  }
+}
+@media (max-width: 500px) {
+  .logo {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 350px) {
+  .news-header {
+    padding: 1rem 2rem;
+  }
+  .logo {
+    font-size: 2.5rem;
+  }
+}

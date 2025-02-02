@@ -42,7 +42,7 @@ function NavBar() {
             </p>
           ))}
           <p className="nav-link" onClick={() => setIsBookMarksOpen(true)}>
-            Bookmarks <i className="fa-regular fa-bookmark"></i>
+            Bookmarks <i className="fa-solid fa-bookmark"></i>
           </p>
         </div>
       </div>

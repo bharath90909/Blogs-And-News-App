@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from "react-router";
 function AppLayout() {
   const navigate = useNavigate();
   useEffect(() => {
-    navigate("/blogs");
+    navigate("/news");
   }, []);
   return (
     <div className="container">

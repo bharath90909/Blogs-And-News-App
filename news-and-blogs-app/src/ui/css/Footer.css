@@ -18,3 +18,12 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 2rem;
 }
+
+@media (max-width: 500px) {
+  .news-footer {
+    min-height: 8rem;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+  }
+}
