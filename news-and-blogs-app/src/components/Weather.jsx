@@ -1,12 +1,12 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useContext, useEffect, useState } from "react";
 import "../ui/css/Weather.css";
 import axios from "axios";
+import { NewsContext } from "../context/NewsProvider";
 const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 function Weather() {
   const [data, setData] = useState([]);
   const [location, setLocation] = useState("Tanuku");
   const [error, setError] = useState(false);
-
   const fetchWeather = async () => {
     setError(false);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
@@ -27,6 +27,7 @@ function Weather() {
 
   return (
     <div className="weather">
+      {console.log("Weather component")}
       <div className="search">
         <div className="search-top">
           <i className="fa-solid fa-location-dot"></i>

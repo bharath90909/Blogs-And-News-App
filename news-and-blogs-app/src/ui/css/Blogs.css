@@ -91,6 +91,9 @@
 .title-input {
   font-size: 1.8rem;
 }
+.text-input {
+  font-size: 1.6rem;
+}
 .title-input::placeholder,
 .text-input::placeholder {
   font-family: "Comfortaa", sans-serif;

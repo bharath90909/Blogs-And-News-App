@@ -75,6 +75,9 @@
 .modal-blog-form .title-input {
   font-size: 1.8rem;
 }
+.modal-blog-form .text-input {
+  font-size: 1.5rem;
+}
 .modal-blog-form .title-input::placeholder,
 .modal-blog-form .text-input::placeholder {
   font-family: "Comfortaa", sans-serif;

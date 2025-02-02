@@ -4,6 +4,7 @@ import "../ui/css/NewsGrid.css";
 import noImage from "../assets/images/no-img.png";
 import { NewsContext } from "../context/NewsProvider";
 import Shimmer from "./Shimmer";
+import { isBookmarked } from "../utils/utils";
 
 function NewsGrid({ modalOpen, setCurrentNews }) {
   const { news, bookmarks, setBookmarks } = useContext(NewsContext);
@@ -15,7 +16,14 @@ function NewsGrid({ modalOpen, setCurrentNews }) {
 
   const addToBookMark = (e, selectedArticle) => {
     e.stopPropagation();
-    const updatedBookMarks = [...bookmarks, selectedArticle];
+    let updatedBookMarks = [...bookmarks];
+    if (isBookmarked(selectedArticle)) {
+      updatedBookMarks = updatedBookMarks.filter(
+        (bookmark) => bookmark.title !== selectedArticle.title
+      );
+    } else {
+      updatedBookMarks.push(selectedArticle);
+    }
     localStorage.setItem("bookmarks", JSON.stringify(updatedBookMarks));
     setBookmarks(updatedBookMarks);
   };
@@ -37,10 +45,17 @@ function NewsGrid({ modalOpen, setCurrentNews }) {
               )}
               <h3>
                 {article.title.slice(0, 50)}
-                <i
-                  className="fa-regular fa-bookmark bookmark"
-                  onClick={(e) => addToBookMark(e, article)}
-                ></i>
+                {isBookmarked(article) ? (
+                  <i
+                    className="fa-solid fa-bookmark bookmark"
+                    onClick={(e) => addToBookMark(e, article)}
+                  ></i>
+                ) : (
+                  <i
+                    className="fa-regular fa-bookmark bookmark"
+                    onClick={(e) => addToBookMark(e, article)}
+                  ></i>
+                )}
               </h3>
             </div>
           );

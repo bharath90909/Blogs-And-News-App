@@ -3,11 +3,11 @@ import "../ui/css/NewsHeadline.css";
 import Shimmer from "./Shimmer";
 import techImg from "../assets/images/tech.jpg";
 import { NewsContext } from "../context/NewsProvider";
+import { isBookmarked } from "../utils/utils";
 import noImage from "../assets/images/no-img.png";
 
 function NewsHeadline({ modalOpen, setCurrentNews }) {
-  const { headline, isLoading, bookmarks, setBookmarks } =
-    useContext(NewsContext);
+  const { headline, bookmarks, setBookmarks } = useContext(NewsContext);
   // return isLoading ? (
   //   <p>Loading..</p>
   // ) : (
@@ -28,13 +28,20 @@ function NewsHeadline({ modalOpen, setCurrentNews }) {
 
   const handleBookMark = (e) => {
     e.stopPropagation();
-    console.log("Inside bookmark handle");
-    const updatedBookMarks = [...bookmarks, headline];
+    let updatedBookMarks = [...bookmarks];
+    if (isBookmarked(headline)) {
+      updatedBookMarks = updatedBookMarks.filter(
+        (bookmark) => bookmark.title !== headline.title
+      );
+    } else {
+      updatedBookMarks.push(headline);
+    }
     localStorage.setItem("bookmarks", JSON.stringify(updatedBookMarks));
     setBookmarks(updatedBookMarks);
   };
   return (
     <div className="headline" onClick={showHeadLine}>
+      {console.log("Renderd")}
       {headline?.image ? (
         <img src={headline.image} alt="Headline-Image" />
       ) : (
@@ -42,10 +49,17 @@ function NewsHeadline({ modalOpen, setCurrentNews }) {
       )}
       <div className="headline-title">
         {headline?.title}
-        <i
-          className="fa-regular fa-bookmark bookmark"
-          onClick={handleBookMark}
-        ></i>
+        {isBookmarked(headline) ? (
+          <i
+            className="fa-solid fa-bookmark bookmark"
+            onClick={handleBookMark}
+          ></i>
+        ) : (
+          <i
+            className="fa-regular fa-bookmark bookmark"
+            onClick={handleBookMark}
+          ></i>
+        )}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import userImage from "../assets/images/user.jpg";
+import userImage from "../assets/images/user2.jpg";
 import "../ui/css/NavBar.css";
 import { NewsContext } from "../context/NewsProvider";
 import BookMarks from "./BookMarks";
@@ -17,14 +17,14 @@ const categories = [
 ];
 
 function NavBar() {
-  const { category, setCategory } = useContext(NewsContext);
+  const { category: currentCategory, setCategory } = useContext(NewsContext);
   const [isBookMarksOpen, setIsBookMarksOpen] = useState(false);
   return (
     <div className="navbar">
       <Link to="/blogs" className="user">
         <div className="user">
           <img src={userImage} alt="user image" />
-          <p>Mary's Blog</p>
+          <p>Bharath's Blog</p>
         </div>
       </Link>
       <div className="categories">
@@ -32,7 +32,9 @@ function NavBar() {
         <div className="nav-links">
           {categories.map((category, index) => (
             <p
-              className={`nav-link `}
+              className={`nav-link ${
+                category === currentCategory ? "active-link" : ""
+              }`}
               key={index}
               onClick={() => setCategory(category)}
             >

@@ -1,8 +1,4 @@
 import React, { useContext, useState } from "react";
-import blogImage1 from "../assets/images/blog1.jpg";
-import blogImage2 from "../assets/images/blog2.jpg";
-import blogImage3 from "../assets/images/blog3.jpg";
-import blogImage4 from "../assets/images/blog4.jpg";
 import "../ui/css/MyBlogs.css";
 import { BlogsContext } from "../context/BlogsProvider";
 import BlogModal from "./BlogModal";
@@ -66,7 +62,13 @@ function MyBlogs() {
             })}
         </div>
       ) : (
-        <p>No Blogs...</p>
+        <p
+          style={{
+            textAlign: "center",
+          }}
+        >
+          No Blogs...
+        </p>
       )}
 
       {/* <div className="blog-post">

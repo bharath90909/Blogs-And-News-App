@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BlogsContext } from "../context/BlogsProvider";
 import "../ui/css/Blogs.css";
-import userImage from "../assets/images/user.jpg";
+import userImage from "../assets/images/user2.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 function Blogs() {

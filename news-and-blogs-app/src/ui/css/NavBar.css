@@ -69,12 +69,13 @@
   align-items: center;
   letter-spacing: 0.1rem;
   cursor: pointer;
+  transition: 0.3s all;
 }
 .nav-link i {
   font-size: 2rem;
   margin-left: 1rem;
 }
 .nav-link.active-link {
-  border-bottom: 1px solid #fff;
-  background-color: red;
+  font-weight: 700;
+  /* border-bottom: 1px solid #fff; */
 }
