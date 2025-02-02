@@ -1,7 +1,7 @@
-# News and Blogs App
+# Blogs And News App
 
 ## 📌 Overview
-The **News and Blogs App** is a React-based application that allows users to browse news articles from different categories, search for specific news. Users can also write and manage their own blogs.
+The **Blogs And News App** is a React-based application that allows users to browse news articles from different categories, search for specific news. Users can also write and manage their own blogs.
 
 ## 🚀 Tech Stack
 - **ReactJS** – For building the UI.
