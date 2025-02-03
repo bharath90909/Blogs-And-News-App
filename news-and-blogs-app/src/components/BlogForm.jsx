@@ -39,12 +39,12 @@ function BlogForm({ currentBlog, currentBlogIndex: index, closeModal }) {
   return (
     <div className="modal-overlay">
       <div className="modal-blog-form">
-        <div className="modal-blog-form-content">
-          <h1>Edit Post</h1>
-          <span className="close-button" onClick={closeModal}>
-            <i className="fa-solid fa-xmark"></i>
-          </span>
-          <form onSubmit={handleSubmit}>
+        <h1>Edit Post</h1>
+        <span className="close-button" onClick={closeModal}>
+          <i className="fa-solid fa-xmark"></i>
+        </span>
+        <form onSubmit={handleSubmit}>
+          <div className="form-center">
             <div className="img-upload">
               <label htmlFor="file-upload" className="file-upload">
                 {!image ? <i className="bx bx-upload"></i> : <i>✔️</i>}
@@ -72,8 +72,8 @@ function BlogForm({ currentBlog, currentBlogIndex: index, closeModal }) {
             <button className="submit-btn" type="submit">
               Edit Post
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

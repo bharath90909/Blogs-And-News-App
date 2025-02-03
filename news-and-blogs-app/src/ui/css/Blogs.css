@@ -40,12 +40,12 @@
 }
 
 .post-btn {
-  width: clamp(15rem, 16cqi, 30rem);
+  width: clamp(25rem, 27cqi, 30rem);
   aspect-ratio: 4/1;
   background: linear-gradient(to right, #b88efc, #6877f4);
   border: none;
   border-radius: 5rem;
-  font-size: clamp(1.4rem, 1.5cqi, 2.5rem);
+  font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
@@ -159,6 +159,11 @@
   transform: translateY(-5%);
 }
 
+.text-input::-webkit-scrollbar,
+.title-input::-webkit-scrollbar {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .blogs-left {
     background: none;
@@ -181,7 +186,7 @@
 
   .close-btn {
     top: 3rem;
-    right: 1.5rem;
+    right: 1rem;
   }
   .blogs-right-form {
     margin-top: 7rem;
@@ -197,11 +202,15 @@
 }
 
 @media (max-width: 450px) {
+  .blogs-right-form {
+    width: 100%;
+    margin-top: 4rem;
+  }
   .text-input,
   .title-input {
-    width: 90%;
+    max-width: 90vw;
   }
-  .blogs-right-form {
-    margin-top: 4rem;
+  .post-btn {
+    font-size: 2rem;
   }
 }

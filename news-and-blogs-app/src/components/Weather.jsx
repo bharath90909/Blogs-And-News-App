@@ -5,7 +5,7 @@ import { NewsContext } from "../context/NewsProvider";
 const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 function Weather() {
   const [data, setData] = useState([]);
-  const [location, setLocation] = useState("Tanuku");
+  const [location, setLocation] = useState("Hyderabad");
   const [error, setError] = useState(false);
   const fetchWeather = async () => {
     setError(false);

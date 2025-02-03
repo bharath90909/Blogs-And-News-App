@@ -63,6 +63,7 @@ function MyBlogs() {
         </div>
       ) : (
         <p
+          className="no-blogs"
           style={{
             textAlign: "center",
           }}

@@ -11,16 +11,29 @@
 .modal-blog-form {
   position: relative;
   /* top: 20px; */
+  width: 90%;
+  max-width: 60rem;
+  height: auto;
+  max-height: 80%;
+  background-color: #111214;
+  padding: 2rem 0;
+
+  box-shadow: 0 0 5rem 4rem rgba(0, 0, 0, 0.5);
+}
+.modal-blog-form form {
+  /* border: 1px solid blue; */
+
+  /* width: 90%; */
+}
+.form-center {
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.9);
+  flex-direction: column;
+  row-gap: 4rem;
+  margin: 0 auto;
+  /* border: 1px solid red; */
 }
-/* .modal-blog-form-content {
-  border: 1px solid yellow;
-} */
-.modal-blog-form .post-btn {
+/* .modal-blog-form .post-btn {
   width: clamp(15rem, 16cqi, 30rem);
   aspect-ratio: 4/1;
   background: linear-gradient(to right, #b88efc, #6877f4);
@@ -32,28 +45,12 @@
   color: #fff;
   text-shadow: o 0.5rem 1rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
-}
-
-.modal-blog-form .post-btn:active {
-  transform: translateY(-5%);
-}
-.modal-blog-form .blogs-right-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 5rem;
-}
-.modal-blog-form form {
-  /* border: 1px solid blue; */
-  display: flex;
-  flex-direction: column;
-  row-gap: 4rem;
-}
+} */
 
 .modal-blog-form h1 {
   text-align: center;
   font-family: "Comfortaa", sans-serif;
-  font-size: clamp(2rem, 3cqi, 6rem);
+  font-size: clamp(4rem, 3cqi, 6rem);
   text-transform: uppercase;
   background: linear-gradient(to right, #b88efc, #6877f4);
   -webkit-background-clip: text;
@@ -71,12 +68,13 @@
   border-bottom: 0.1rem solid #b88efc;
   padding: 2rem 0;
   color: #ddd;
+  width: 100%;
 }
 .modal-blog-form .title-input {
   font-size: 1.8rem;
 }
 .modal-blog-form .text-input {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 .modal-blog-form .title-input::placeholder,
 .modal-blog-form .text-input::placeholder {
@@ -129,6 +127,8 @@
 
 .modal-blog-form .submit-btn {
   height: 5rem;
+  width: 100%;
+  text-align: center;
   background: linear-gradient(to left, #b88efc, #6877f4);
   border: none;
   border-radius: 5rem;
@@ -141,4 +141,28 @@
 }
 .modal-blog-form .submit-btn:active {
   transform: translateY(-5%);
+}
+
+@media (max-width: 750px) {
+  .form-center {
+    width: 100%;
+    margin: 0 0;
+    padding: 0 4rem;
+  }
+  .modal-blog-form .text-input {
+    aspect-ratio: 0;
+    resize: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-center {
+    width: 100%;
+    margin: 0 0;
+    padding: 0 2rem;
+  }
+  .modal-blog-form .text-input {
+    aspect-ratio: 0;
+    resize: none;
+  }
 }
