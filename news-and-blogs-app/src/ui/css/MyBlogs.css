@@ -81,6 +81,24 @@
   opacity: 0.5;
 }
 
+.create-blog {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: 1px solid #fff; */
+}
+.create-blog button {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
 .no-blogs {
   text-align: center;
   font-family: "Bebas Neueu", sans-serif;
