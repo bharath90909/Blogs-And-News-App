@@ -29,7 +29,6 @@ function NewsHeadline({ modalOpen, setCurrentNews }) {
   };
   return (
     <div className="headline" onClick={showHeadLine}>
-      {console.log("Renderd")}
       {headline?.image ? (
         <img src={headline.image} alt="Headline-Image" />
       ) : (

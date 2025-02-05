@@ -33,7 +33,11 @@ function MyBlogs() {
           blogs.length > 0 &&
           blogs.map((blog, index) => {
             return (
-              <div className="blog-post" onClick={() => showBlog(blog)}>
+              <div
+                className="blog-post"
+                key={index}
+                onClick={() => showBlog(blog)}
+              >
                 <img src={blog.image} alt="" />
                 <h3>{blog.title}</h3>
                 <div className="post-buttons">

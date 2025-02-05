@@ -12,7 +12,6 @@ function Weather() {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
     try {
       const response = await axios.get(url);
-      console.log(response);
       setData(response.data);
     } catch (err) {
       setError(true);
@@ -27,7 +26,6 @@ function Weather() {
 
   return (
     <div className="weather">
-      {console.log("Weather component")}
       <div className="search">
         <div className="search-top">
           <i className="fa-solid fa-location-dot"></i>

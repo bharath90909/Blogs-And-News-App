@@ -22,18 +22,15 @@ function NewsProvider({ children }) {
 
     const response = await axios.get(url);
     const fetchedNews = response.data.articles;
-    console.log(fetchedNews);
     setHeadline(fetchedNews[0]);
     setNews(fetchedNews.slice(1, 7));
     setIsLoading(false);
   }
   useEffect(() => {
     fetchNews();
-    console.log("Inside Effect 1");
   }, [category, searchQuery]);
   useEffect(() => {
     setSearchQuery("");
-    console.log("Inside Effect 2");
   }, [category]);
   return (
     <NewsContext.Provider
