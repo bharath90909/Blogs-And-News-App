@@ -213,4 +213,10 @@
   .post-btn {
     font-size: 2rem;
   }
+  .close-btn {
+    font-size: 2rem;
+  }
+  .close-btn i {
+    font-size: 2rem;
+  }
 }
